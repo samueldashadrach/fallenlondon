@@ -1,14 +1,28 @@
-import os
+# import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 # get the path of ChromeDriverServer
-dir = os.path.dirname(__file__)
-chrome_driver_path = dir + "\chromedriver.exe"
+# dir = os.path.dirname(__file__)
+# chrome_driver_path = dir + "\chromedriver.exe"
 
 # create a new Chrome session
-driver = webdriver.Chrome(chrome_driver_path)
+# driver = webdriver.Chrome(chrome_driver_path)
+
+desired_cap = {
+ 'browser': 'Chrome',
+ 'browser_version': '70.0',
+ 'os': 'Windows',
+ 'os_version': '10',
+ 'resolution': '1024x768'
+}
+
+driver = webdriver.Remote(
+    command_executor='http://samuelshadrach1:YkZ6h4pGioDVAFTm5oZy@hub.browserstack.com:80/wd/hub',
+    desired_capabilities=desired_cap)
+
 driver.implicitly_wait(10)
 # driver.maximize_window()
 
@@ -50,3 +64,5 @@ while True:
         s.click()
     except NoSuchElementException:
         pass
+    
+driver.quit()
