@@ -30,10 +30,10 @@ driver.implicitly_wait(10)
 driver.get("http://www.fallenlondon.com")
 
 s = driver.find_element_by_xpath("//*[@id=\"emailAddress\"]")
-s.send_keys("samuel.da.shadrach@gmail.com")
+s.send_keys("")
 
 s = driver.find_element_by_xpath("//*[@id=\"password\"]")
-s.send_keys("happybirds1")
+s.send_keys("")
 
 s = driver.find_element_by_xpath("//*[@id=\"log-in\"]/form/div/button")
 s.click()
