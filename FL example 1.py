@@ -20,7 +20,7 @@ desired_cap = {
 }
 
 driver = webdriver.Remote(
-    command_executor='http://samuelshadrach1:YkZ6h4pGioDVAFTm5oZy@hub.browserstack.com:80/wd/hub',
+    command_executor='INSERT_EXECUTOR_HERE',
     desired_capabilities=desired_cap)
 
 driver.implicitly_wait(10)
@@ -30,10 +30,10 @@ driver.implicitly_wait(10)
 driver.get("http://www.fallenlondon.com")
 
 s = driver.find_element_by_xpath("//*[@id=\"emailAddress\"]")
-s.send_keys("")
+s.send_keys("INSERT_USERNAME_HERE")
 
 s = driver.find_element_by_xpath("//*[@id=\"password\"]")
-s.send_keys("")
+s.send_keys("INSERT_PASSWORD_HERE")
 
 s = driver.find_element_by_xpath("//*[@id=\"log-in\"]/form/div/button")
 s.click()
