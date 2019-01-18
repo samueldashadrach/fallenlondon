@@ -1,6 +1,6 @@
 # fallenlondon
 
-Testing selenium script to play Fallen London autonomously
+Testing selenium scripts to play Fallen London autonomously
 
 Change data-branch-id values in the given examples to change which storylets you wish to enter
 
